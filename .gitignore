@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+*.pyc
+*.pyo
+.DS_Store
+Excersice
+
+# Distribution / packaging
+bin/
+build/
+dist/
