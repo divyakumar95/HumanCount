@@ -6,6 +6,7 @@ __pycache__/
 *.pyo
 .DS_Store
 Excersice
+Data/1
 
 # Distribution / packaging
 bin/
