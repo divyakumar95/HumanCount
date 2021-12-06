@@ -14,6 +14,8 @@ git clone https://github.com/divyakumar95/HumanCount.git
 ## Dependencies
 Before you begin playing with the source code you might need to install deps just as shown below;
 
+* ipython Notebook
+
 ```bash
 pip3 install -r requirements.txt
 ```
