@@ -7,7 +7,6 @@ __pycache__/
 .DS_Store
 Excersice
 Data/1
-Models/*
 *.pkl
 
 # Distribution / packaging
