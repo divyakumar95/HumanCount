@@ -15,6 +15,12 @@ git clone https://github.com/divyakumar95/HumanCount.git
 Before you begin playing with the source code you might need to install deps just as shown below;
 
 * ipython Notebook
+* Download Data sets from below link 
+
+```bash
+* https://www.kaggle.com/constantinwerner/human-detection-dataset/download
+* https://www.cis.upenn.edu/~jshi/ped_html/index.html#:~:text=Download%20zipped%20file-,here,-.%20Zipped%20file%20size
+```
 
 ```bash
 pip3 install -r requirements.txt
