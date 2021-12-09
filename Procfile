@@ -1,1 +1,1 @@
-web: gunicorn Server:app --lof-file -
+web: gunicorn Server:app
