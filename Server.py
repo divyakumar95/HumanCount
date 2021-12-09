@@ -51,4 +51,4 @@ def home():
     return render_template('ImageCount.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8080, debug=True)
