@@ -17,7 +17,7 @@ matplotlib
 networkx==2.6.3
 numpy==1.21.4
 opencv-python==4.5.4.60
-opencv-python-headless==4.2.0.32
+opencv-python-headless
 packaging==21.3
 Pillow==8.4.0
 pipreqs==0.4.11
