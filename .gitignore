@@ -8,6 +8,7 @@ __pycache__/
 Excersice
 Data/1
 *.pkl
+!rf.pkl
 
 # Distribution / packaging
 bin/

@@ -10,7 +10,7 @@ import matplotlib.image as mpimg
 app = Flask(__name__)
 
 #Load the model
-model = pickle.load(open('../Models/rf.pkl','rb'))
+model = pickle.load(open('Models/rf.pkl','rb'))
 
 @app.route('/disp', methods=['GET','POST'])
 def getImage():
@@ -22,9 +22,9 @@ def getImage():
         img2 = cv2.imdecode(npimg,cv2.IMREAD_GRAYSCALE)
         X_test, hog_img, img1 = Feat(img2)
         y_pred = predict(X_test)
-        mpimg.imsave("img.png", img1)
-        mpimg.imsave("hog.png", hog_img)
-        responseData = {'Y_pred': str(y_pred),'hog_img':'./hog.png','image':'./img.png'}
+        mpimg.imsave('images/img.png', img1)
+        mpimg.imsave('images/hog.png', hog_img)
+        responseData = {'Y_pred': str(y_pred),'hog_img':'images/hog.png','image':'images/img.png'}
         response = app.response_class(
             response = json.dumps(responseData),
             mimetype='application/json'
