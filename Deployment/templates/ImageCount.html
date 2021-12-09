@@ -1,51 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script type="text/javascript" src="data.json"></script>
-	<script type="text/javascript" src="javascrip.js"></script>
-	<body>
-        <p>Click on the "Choose File" button to upload a file:</p>
-        <form action="/predict/" method="post" enctype="multipart/form-data">
-            <input type="file" id="myFile" name="filename">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="data.json"></script>
+<script type="text/javascript" src="javascrip.js"></script>
+<body>
+	<div class="container">
+        <form action="/disp" method="post" enctype="multipart/form-data">
+            <input type="file" id="image_input" name="filename" accept="image/png, image/jpg">
             <input type="submit">
         </form>
-		<h>
-			<div class="banner-section" id="img-container"></div>
-		</h>
-    </body>
+        <div id="display_image"></div>
+   	</div>
+</body>
 </html>
 
+<script>
+const image_input = document.querySelector("#image_input");
+image_input.addEventListener("change", function() {
+   const reader = new FileReader();
+   reader.addEventListener("load", () => {
+   const uploaded_image = reader.result;
+   document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
+});
+   reader.readAsDataURL(this.files[0]);
+});
+</script>
 
-{% extends "layout.html" %}
-
-{% block content %}
-
-    <div class="row justify-content-md-center mb-4">
-        <h3 class='text-primary'>Prediction is {{ prediction[0] }}</h3>
-    
-    </div>
-
-    <div class="row justify-content-md-center">
-        <div class="thumbnail">
-            {% if prediction[0] == "Iris-setosa" %}
-                <img src="{{url_for('static', filename='images/iris_setosa.jpg')}}" class="img-thumbnail" />
-            {% endif %}
-        </div>
-    </div>
-        
-    <div class="row justify-content-md-center">
-        <div class="thumbnail">
-            {% if prediction[0] == "Iris-versicolor" %}
-                <img src="{{url_for('static', filename='images/iris_versicolor.jpg')}}" class="img-thumbnail" />
-            {% endif %}
-        </div>
-    </div>
-
-    <div class="row justify-content-md-center">
-        <div class="thumbnail">
-            {% if prediction[0] == "Iris-virginica" %}
-                <img src="{{url_for('static', filename='images/iris_virginica.jpg')}}" class="img-thumbnail" />
-            {% endif %}
-        </div>
-    </div
-{% endblock %}
+<style>
+.container{
+   width: 500px;
+   height: 400px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 10px;
+   border: 1px solid black;
+}
+#display_image{
+   width: 100%;
+   height: 100%;
+   border: 1px solid black;
+   background-position: center;
+   background-size: cover;
+}
+</style>
