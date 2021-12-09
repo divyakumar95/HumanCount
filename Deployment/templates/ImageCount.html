@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script type="text/javascript" src="data.json"></script>
+	<script type="text/javascript" src="javascrip.js"></script>
+	<body>
+        <p>Click on the "Choose File" button to upload a file:</p>
+        <form action="/predict/" method="post" enctype="multipart/form-data">
+            <input type="file" id="myFile" name="filename">
+            <input type="submit">
+        </form>
+		<h>
+			<div class="banner-section" id="img-container"></div>
+		</h>
+    </body>
+</html>
+
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>Prediction is {{ prediction[0] }}</h3>
+    
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == "Iris-setosa" %}
+                <img src="{{url_for('static', filename='images/iris_setosa.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div>
+        
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == "Iris-versicolor" %}
+                <img src="{{url_for('static', filename='images/iris_versicolor.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == "Iris-virginica" %}
+                <img src="{{url_for('static', filename='images/iris_virginica.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div
+{% endblock %}
