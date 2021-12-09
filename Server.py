@@ -29,8 +29,8 @@ def getImage():
             response = json.dumps(responseData),
             mimetype='application/json'
             )
-        #return response
-        return render_template('predict.html', prediction = str(y_pred))
+        return response
+        #return render_template('ImageCount.html', prediction = str(y_pred))
 
 def predict(X):
     if request.method == 'POST':
