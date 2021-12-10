@@ -10,7 +10,7 @@ import matplotlib.image as mpimg
 app = Flask(__name__)
 
 #Load the model
-model = pickle.load(open('Models/rf.pkl','rb'))
+model = pickle.load(open('Models/lr.pkl','rb'))
 
 @app.route('/disp', methods=['GET','POST'])
 def getImage():
