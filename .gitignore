@@ -7,6 +7,11 @@ __pycache__/
 .DS_Store
 Excersice
 Data/1
+*.pkl
+*.png
+!lr.pkl
+!DataSet.csv
+
 
 # Distribution / packaging
 bin/
