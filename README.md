@@ -36,10 +36,10 @@ This project does count the number of people in the image!
 
 ## Running the App 
 
-To be filled 
+From the below link 
 
 ```bash
-$-> ToDo
+[Run proj](https://app-count-people.herokuapp.com/)
 ```
 
 -----------------------
