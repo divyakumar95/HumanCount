@@ -39,7 +39,7 @@ This project does count the number of people in the image!
 From the below link 
 
 ```bash
-[Run proj](https://app-count-people.herokuapp.com/)
+https://app-count-people.herokuapp.com/
 ```
 
 -----------------------
