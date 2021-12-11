@@ -9,8 +9,12 @@ Excersice
 Data/1
 *.pkl
 *.png
+*.jpg
+*.jpeg
 !lr.pkl
-!DataSet.csv
+Dataset_v1.csv
+Dataset copy.csv
+
 
 
 # Distribution / packaging
