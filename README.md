@@ -19,7 +19,7 @@ Before you begin playing with the source code you might need to install deps jus
 
 * ipython Notebook
 * Download Data sets from below link 
-* [1](https://www.kaggle.com/constantinwerner/human-detection-dataset/download),[2](https://www.cis.upenn.edu/~jshi/ped_html/index.html#:~:text=Download%20zipped%20file-,here,-.%20Zipped%20file%20size) 
+* [Dataset](https://drive.google.com/drive/folders/1Lg8thKb_bRMN8G1yL4hkfh26--azdDMR?usp=sharing)
 
 ```bash
 * https://www.kaggle.com/constantinwerner/human-detection-dataset/download
@@ -36,10 +36,10 @@ This project does count the number of people in the image!
 
 ## Running the App 
 
-To be filled 
+From the below link 
 
 ```bash
-$-> ToDo
+https://app-count-people.herokuapp.com/
 ```
 
 -----------------------
