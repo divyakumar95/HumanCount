@@ -4,6 +4,9 @@
 
 -----------------------
 
+# Working Demo can be found in the below link 
+https://app-count-people.herokuapp.com/
+
 # Getting started
 To get started with the code on this repo, you need to either clone or download this repo into your machine just as shown below;
 
@@ -16,6 +19,7 @@ Before you begin playing with the source code you might need to install deps jus
 
 * ipython Notebook
 * Download Data sets from below link 
+* [1](https://www.kaggle.com/constantinwerner/human-detection-dataset/download),[2](https://www.cis.upenn.edu/~jshi/ped_html/index.html#:~:text=Download%20zipped%20file-,here,-.%20Zipped%20file%20size) 
 
 ```bash
 * https://www.kaggle.com/constantinwerner/human-detection-dataset/download
