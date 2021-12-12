@@ -19,7 +19,7 @@ Before you begin playing with the source code you might need to install deps jus
 
 * ipython Notebook
 * Download Data sets from below link 
-* [Dataset](https://drive.google.com/drive/folders/1Lg8thKb_bRMN8G1yL4hkfh26--azdDMR?usp=sharing)
+* [Dataset](https://drive.google.com/drive/u/1/folders/1XMoDvwcSIew6mEunCPKRyX9equKqw2Sj)
 
 ```bash
 * https://www.kaggle.com/constantinwerner/human-detection-dataset/download
