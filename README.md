@@ -4,6 +4,9 @@
 
 -----------------------
 
+# Working Demo can be found in the below link 
+https://app-count-people.herokuapp.com/
+
 # Getting started
 To get started with the code on this repo, you need to either clone or download this repo into your machine just as shown below;
 
@@ -16,6 +19,7 @@ Before you begin playing with the source code you might need to install deps jus
 
 * ipython Notebook
 * Download Data sets from below link 
+* [Dataset](https://drive.google.com/drive/u/1/folders/1XMoDvwcSIew6mEunCPKRyX9equKqw2Sj)
 
 ```bash
 * https://www.kaggle.com/constantinwerner/human-detection-dataset/download
@@ -32,10 +36,10 @@ This project does count the number of people in the image!
 
 ## Running the App 
 
-To be filled 
+From the below link 
 
 ```bash
-$-> ToDo
+https://app-count-people.herokuapp.com/
 ```
 
 -----------------------

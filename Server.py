@@ -1,22 +1,26 @@
 import numpy as np
-from flask import Flask, json, render_template, request
+from flask import Flask, json, render_template, request, session
 import pickle
 import cv2
 from skimage.feature import hog
 from sklearn.metrics import accuracy_score
 import matplotlib.image as mpimg
+import os
+import uuid
+from werkzeug.utils import redirect, secure_filename
 
 #create an instance of Flask
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = 'oh_so_secret'
 #Load the model
-model = pickle.load(open('Models/rf.pkl','rb'))
+model = pickle.load(open('Models/lr.pkl','rb'))
 
 @app.route('/disp', methods=['GET','POST'])
 def getImage():
     if request.method == 'POST':
         print(request.form)
         r = request
+        uploadedFile = request.files['filename']
         file = request.files['filename'].read()
         npimg = np.fromstring(file, np.uint8)
         img2 = cv2.imdecode(npimg,cv2.IMREAD_GRAYSCALE)
@@ -24,14 +28,16 @@ def getImage():
         y_pred = predict(X_test)
         mpimg.imsave('images/img.png', img1)
         mpimg.imsave('images/hog.png', hog_img)
-        responseData = {'Y_pred': str(y_pred),'hog_img':'images/hog.png','image':'images/img.png'}
-        response = app.response_class(
-            response = json.dumps(responseData),
-            mimetype='application/json'
-            )
-        #return response
-        return render_template('predict.html', prediction = str(y_pred))
-
+        uploadedFile.seek(0)
+        fileName = str(uuid.uuid1()) +  secure_filename(uploadedFile.filename)
+        saveFile(uploadedFile, fileName)
+        response_data = {'image' : fileName, 'count': str(y_pred)}
+        session['messages'] = json.dumps(response_data)
+       # print(image_string)
+        return redirect('/results')
+        #return render_template('ImageCount.html', prediction = str(y_pred))
+def saveFile(file, fileName):
+    file.save(os.path.join('static', fileName))
 def predict(X):
     if request.method == 'POST':
         prediction = model.predict(X)
@@ -50,5 +56,10 @@ def Feat(FileName):
 def home():
     return render_template('ImageCount.html')
 
+@app.route('/results', methods=['GET','POST'])
+def results():
+    messages = session['messages']
+    return render_template('results.html', messages = json.loads(messages))
+
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(port=8080, debug=True)

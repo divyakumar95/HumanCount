@@ -8,7 +8,20 @@ __pycache__/
 Excersice
 Data/1
 *.pkl
-!rf.pkl
+*.png
+*.jpg
+*.jpeg
+!lr.pkl
+Dataset_v1.csv
+Dataset copy.csv
+info/
+hooks/
+config
+head
+description
+
+
+
 
 # Distribution / packaging
 bin/
